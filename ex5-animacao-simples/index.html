@@ -10,35 +10,30 @@
       width: 100px;
       height: 100px;
       background-color: lightgreen;
-      position: relative; /* Permite mover a div com a propriedade 'left' */
+      position: relative;
       margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- Botão que inicia a animação -->
+
   <button id="myButton">Mover</button>
 
-  <!-- Div que será movida ao clicar no botão -->
   <div id="myDiv"></div>
 
-  <!-- Script JavaScript embutido na página -->
+  <!-- JS -->
   <script>
-    // Seleciona o botão e a div pelo ID
+
     const button = document.querySelector('#myButton');
     const div = document.querySelector('#myDiv');
+    let position = 0; //Variavel pra controlar a posição
 
-    // Variável para controlar a posição da div
-
-    // 1ª Digitação (Aqui)
-
-    // Adiciona um evento de clique ao botão
- 
-      // Aumenta a posição em 50 pixels
-      
-
-      // Move a div para a nova posição
-
+    button.addEventListener('click', () => {
+      //Alterna posição em 50 pixels
+      position += 50;
+      //Move a div para a nova posição
+      div.style.left = `${position}px`;
+    });
   </script>
 </body>
 </html>
