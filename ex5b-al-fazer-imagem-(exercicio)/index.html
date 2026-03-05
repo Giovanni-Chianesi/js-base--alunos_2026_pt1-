@@ -24,19 +24,17 @@
 
     /* Estilo da imagem */
     img {
-      width: 200px; /* Largura fixa */
-      height: 200px; /* Altura fixa */
+      width: 200px;
+      height: 200px; 
       border: 2px solid black;
-      border-radius: 10px; /* Borda arredondada */
-      transition: transform 0.3s ease; /* Efeito de transição suave */
+      border-radius: 10px; 
+      transition: transform 0.3s ease;
     }
 
-    /* Efeito de escala ao passar o mouse */
     img:hover {
       transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
     }
 
-    /* Estilo do texto principal */
     #myText {
       margin-top: 20px;
       font-size: 1.5em;
@@ -44,7 +42,6 @@
       color: #333;
     }
 
-    /* Estilo do texto adicional */
     .subtext {
       margin-top: 10px;
       font-size: 1.2em;
@@ -61,16 +58,28 @@
     <!-- Texto principal que será modificado -->
     <p id="myText">Passe o mouse sobre a imagem</p>
 
-    <!-- Texto adicional -->
+    <!-- Texto adicional MUITO necessário do PROFESSOR -->
     <p class="subtext" id="subText">Sabrina Carpenter - Linda!</p>
   </div>
 
-  <!-- Script JavaScript embutido na página -->
+  <!-- JS Embutido -->
+
   <script>
+    const myImage = document.querySelector('#myImage');
+    const myText = document.querySelector('#myText');
+    const subText = document.querySelector('#subText');
 
+    myImage.addEventListener('mouseover', () => {
+      myImage.src = 'image2.png'; // Altere para a segunda imagem
+      myText.textContent = 'Quem é ela?'; // Altere o texto
+      subText.textContent = 'Who is This?'; // Altere o texto adicional
+    });
 
-    // 1ª Digitação (Resolva aqui o exercício)
-
+    myImage.addEventListener('mouseout', () => {
+      myImage.src = 'image.png'; // Volte para a imagem original
+      myText.textContent = 'Passe o mouse sobre a imagem'; // Volte para o texto 
+      subText.textContent = 'Sabrina Carpenter - Linda!'; // Mantem o texto adicional
+    });
 
   </script>
 </body>
