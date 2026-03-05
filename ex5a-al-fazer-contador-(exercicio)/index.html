@@ -1,1 +1,32 @@
- <!-- 1ª Digitação (Resolva aqui o exercício) -->
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contador de Cliques</title>
+    </head>
+    <body>
+        <button id="botao">Clique em Mim!</button> <!-- Variavel Botão -->
+        <p id="contador">0</p> <!--Variavel Contador -->
+
+        <!-- JS Interno __-->
+
+        <script>
+            const botao = document.querySelector('#botao');
+            const paragrafo = document.querySelector('#contador');
+
+            let contador = 0    
+            botao.addEventListener('click', () => {
+                contador++;
+                paragrafo.textContent = contador;   
+
+                if (contador % 2 === 0) {
+                    paragrafo.style.backgroundColor = '#00ff00'; // Verde para números pares
+                    } else {
+                    paragrafo.style.backgroundColor = '#ff0000'; // Vermelho para números ímpares
+                }
+            })
+        </script>
+
+    </body>
+</html>
